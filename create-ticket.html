@@ -9,11 +9,26 @@
 </head>
 
 <body>
+    <a href="index.html"><button id="home" class="button">home</button></a>
+
     <div class="centered-container">
-        <p>hello world</p>
-        <a href="index.html"><button id="home" class="button">home</button></a>
-        
- </div>
+        <div class="create-ticket-box">
+
+            <p>Create new ticket</p>
+            <form id="ticketForm" Title : <input type="text" id="title" name="title" placeholder="Enter title">
+                <br>
+                Date :
+                <input type="text" id="date" name="date">
+                <br>
+                Description :
+                <textarea id="description" name="description" placeholder="Enter description"></textarea>
+                <br>
+                <button id="create" class="button">Create</button>
+                <button id="clear" class="button">Clear</button>
+
+        </div>
+    </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
