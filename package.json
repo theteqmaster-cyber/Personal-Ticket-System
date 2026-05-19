@@ -1,0 +1,19 @@
+{
+  "name": "pts-jarvis",
+  "version": "1.0.0",
+  "description": "Personal Ticket System — Jarvis AI Desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0"
+  },
+  "keywords": ["jarvis", "ai", "ollama", "electron"],
+  "author": "PTS",
+  "license": "MIT"
+}
