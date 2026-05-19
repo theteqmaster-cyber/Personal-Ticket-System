@@ -43,9 +43,10 @@ To create/overwrite a file:
 file content goes here
 [/WRITE_FILE]
 
-To add a ticket:
+To create a NEW ticket:
 [ADD_TICKET:Title Here|priority]
-where priority is: low, medium, or high
+where priority is: low, medium, or high.
+CRITICAL: You MUST use this exact [ADD_TICKET:...] format to create a ticket. Do not just type "[Ticket #...]". If you need to create a new ticket AND write files to it, you must FIRST output [ADD_TICKET] and WAIT for the user to confirm the ticket is loaded before writing any files.
 
 To update a ticket status (e.g. to mark it in progress, or to fully complete/finish it):
 [UPDATE_TICKET:id:status]
@@ -57,6 +58,7 @@ To deselect, close, or hide the current active ticket editor (e.g. if the user s
 To select, load, or open a ticket to view its details or work on it (or to switch/open a different ticket):
 [LOAD_TICKET:id]
 where id is the numeric ticket ID.
+CRITICAL: You MUST use this exact [LOAD_TICKET:id] format whenever the user asks to load, show, open, view, or focus a ticket. Do not just speak about loading it; you must output the block so the system actually switches the screen.
 
 To search the internet (use ONLY when the user asks for real-time/current web info, or asks to search the web):
 [WEB_SEARCH:your search query here]

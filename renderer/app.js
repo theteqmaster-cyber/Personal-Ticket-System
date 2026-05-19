@@ -385,6 +385,7 @@ async function sendMessage() {
           openTicketDetail(entry.id);
         } else if (entry.type === 'close_ticket' && entry.status === 'ok') {
           state.activeTicketId = null;
+          activeMSpaceFile = null;
           await renderMSpace();
         }
       }
@@ -542,6 +543,7 @@ function bindTicketActions() {
 async function openTicketDetail(id) {
   state._editTicketId = id;
   state.activeTicketId = id;
+  openTicketDescription();
   switchView('mspace');
 }
 
@@ -1093,6 +1095,7 @@ function bindVoiceMode() {
               if (entry.type === 'close_ticket') {
                 detail = 'closed';
                 state.activeTicketId = null;
+                activeMSpaceFile = null;
                 await renderMSpace();
               }
               logActivity(entry.type, detail, true);
