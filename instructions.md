@@ -1,10 +1,24 @@
+# Project Setup Instructions
+
+To keep your personal API credentials secure and private, `src/ollama.js` is excluded from git tracking via `.gitignore`. 
+
+If you are cloning this repository for the first time, you must create `src/ollama.js` manually.
+
+### Step 1: Create the File
+Create a new file at: `src/ollama.js`
+
+### Step 2: Paste the Code Template
+Copy and paste the entire code block below into `src/ollama.js`, and replace `'YOUR_GROQ_API_KEY'` with your actual Groq API Key:
+
+```javascript
 const http = require('http');
 const https = require('https');
 
 const OLLAMA_HOST = 'localhost';
 const OLLAMA_PORT = 11434;
 
-const GROQ_KEY = 'gsk_xdMy' + 'nTi4tKQUO2JZE66IWGdyb3FYJCiy10qJqH9wXq9YxbHIhkRc';
+// Paste your actual Groq API Key here
+const GROQ_KEY = 'YOUR_GROQ_API_KEY';
 const GROQ_MODELS = ['llama-3.1-8b-instant', 'llama-3.3-70b-versatile', 'qwen/qwen3-32b'];
 
 let abortController = null;
@@ -210,7 +224,6 @@ function groqChatStream(model, sysPrompt, messages, onChunk) {
 }
 
 async function chat(model, sysPrompt, messages) {
-  // Not used heavily, mostly streaming is used. Simple implementation:
   return new Promise((resolve, reject) => {
     let full = '';
     chatStream(model, sysPrompt, messages, (c) => full += c)
@@ -220,3 +233,4 @@ async function chat(model, sysPrompt, messages) {
 }
 
 module.exports = { listModels, chatStream, chat, SYSTEM_PROMPT, stopCurrentStream, GROQ_KEY };
+```
